@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <div class="container">
+{% if error_statement %}
+
+ <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ error_statement }}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+   </button>
+ </div>
+
+{% endif %}
+
+    <h1>Inbox Message</h1>
+    <br/><br/>
+
+    <form action="/form" method="POST">
+  <div class="mb-3">
+    <input type="text" class="form-control"
+           placeholder="Name in English only"
+          name='first_name' value="{{
+          first_name }}">
+          </div>
+
+<div class="mb-3">
+    <input type="text" class="form-control"
+           placeholder="Phone number"
+          name='last_name' value="{{
+            last_name }}">
+          </div>
+
+      <div class="mb-3">
+    <input type="text" class="form-control"
+           id="exampleInputEmail1"
+           aria-describedby="emailHelp"
+           placeholder="E-mail Address"
+          name='email' value="{{
+            email }}">
+          </div>
+
+<div class="mb-3">
+    <input type="text" class="form-control"
+           placeholder="Message in English only"
+          name='message_box' value="{{
+          message_box }}"/>
+          </div>
+
+
+        </br>
+        <button type="submit"
+                class="btn btn-secondary"
+        >Submit</button>
+      </form>
+
+      </div>
+{% endblock %}
